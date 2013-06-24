@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension key="org.civicrm.payment.ogone" type="payment">
-  <downloadUrl>https://github.com/cray146/CiviCRM-Ogone-Payment-Processor/zipball/master</downloadUrl>
+  <downloadUrl>https://github.com/TechToThePeople/ogone/archive/master.zip</downloadUrl>
   <file>Ogone</file>
   <name>Ogone</name>
   <description>Ogone Payment Processor</description>
@@ -14,11 +14,13 @@
   <maintainer>
     <author>Chris Raymaekers</author>
     <email>cray146@gmail.com</email>
+    <author>Xavier Dutoit</author>
+    <email>civicrm@tttp.eu</email>
   </maintainer>
-  <releaseDate>2011-11-25</releaseDate>
-  <version>1.0</version>
-  <develStage>development</develStage>
-  <compatibility><ver>4.0</ver></compatibility>
+  <releaseDate>2013-06-24</releaseDate>
+  <version>1.1</version>
+  <develStage>stable</develStage>
+  <compatibility><ver>4.3</ver></compatibility>
   <comments></comments>
   <typeInfo>
     <userNameLabel>PSPID</userNameLabel>
