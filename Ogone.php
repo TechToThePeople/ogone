@@ -1,5 +1,4 @@
 <?php
-
 require_once 'CRM/Core/Payment.php';
 require_once 'OgoneUtils.php';
 

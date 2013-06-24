@@ -1,5 +1,4 @@
 <?php
-
 require_once 'CRM/Core/Payment/BaseIPN.php';
 require_once 'OgoneUtils.php';
 
@@ -210,7 +209,7 @@ class CRM_Core_Payment_OgoneIPN extends CRM_Core_Payment_BaseIPN {
 //        exit();
 
       // get the payment processor id from contribution page
-      $paymentProcessorID = CRM_Core_DAO::getFieldValue('CRM_Contribute_DAO_ContributionPage', $contribution->contribution_page_id, 'payment_processor_id');
+      $paymentProcessorID = CRM_Core_DAO::getFieldValue('CRM_Contribute_DAO_ContributionPage', $contribution->contribution_page_id, 'payment_processor');
     }
     else {
       $eventID = $privateData['eventID'];
@@ -282,8 +281,7 @@ class CRM_Core_Payment_OgoneIPN extends CRM_Core_Payment_BaseIPN {
     list($mode, $component, $paymentProcessorID, $duplicateTransaction) = self::getContext($privateData);
     $mode = $mode ? 'test' : 'live';
 
-    require_once 'CRM/Core/BAO/PaymentProcessor.php';
-    $paymentProcessor = CRM_core_BAO_PaymentProcessor::getPayment($paymentProcessorID, $mode);
+    $paymentProcessor = CRM_Financial_BAO_PaymentProcessor::getPayment($paymentProcessorID, $mode);
 
     $shaCalc = calculateSHA1($ogoneParams, $paymentProcessor['signature']); 
     if (strcmp($shaSign, $shaCalc)) {
