@@ -293,7 +293,7 @@ class CRM_Core_Payment_OgoneIPN extends CRM_Core_Payment_BaseIPN {
     if ($duplicateTransaction == 0) {
       // Process the transaction.
       $ipn=& self::singleton($mode, $component, $paymentProcessor);
-      $ipn->newOrderNotify($ogoneParams['STATUS'], $privateData, $component, $ogoneParams['amount'], $ogoneParams['PAYID']);
+      $ipn->newOrderNotify($ogoneParams['STATUS'], $privateData, $component, $ogoneParams['amount']/100.0, $ogoneParams['PAYID']);
     }
  
     // Redirect our users to the correct url.
